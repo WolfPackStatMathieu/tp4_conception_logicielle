@@ -1,4 +1,4 @@
-"""Calculator URL Configuration
+"""Calculatrice URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from application import views
+from application.view import views
 
 urlpatterns = [
     path("", views.home, name="home"),
