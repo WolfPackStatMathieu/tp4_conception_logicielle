@@ -1,9 +1,11 @@
 from django.http.request import HttpRequest
 from django.http.response import HttpResponse
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 
 
 # Mappé a / dans le fichier urls.py
+@csrf_exempt
 def home(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
         a = request.POST.get("first")
@@ -34,6 +36,7 @@ def calculer_from_expression(expression: str):
 
 
 # Mappé a /string dans le fichier urls.py
+@csrf_exempt
 def string(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
         expression = request.POST.get("expression")
