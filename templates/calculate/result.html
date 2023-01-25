@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Result</title>
+    <link
+      rel="stylesheet"
+      href="{% static 'css/style.css' %}"
+      type="text/css"
+      media="screen"
+      charset="utf-8"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>{{ z }}</h1>
+    </div>
+  </body>
+  <button class="button-1" onclick="history.back()">Retour</button></a>
+  <footer>
+    <a href="/"> Accéder au calcul par formule</a> 
+    <br/>
+    <a href="/string"> Accéder au calcul par expression </a>
+  </footer>
+  </html>

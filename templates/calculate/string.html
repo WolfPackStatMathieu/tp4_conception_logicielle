@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Calculatrice</title>
+    <link
+      rel="stylesheet"
+      href="{% static 'css/style.css' %}"
+      type="text/css"
+      media="screen"
+      charset="utf-8"
+    />
+  </head>
+  <body>
+    <div>
+      <h1>Application Calculatrice</h1>
+      <h2>Une petite application construite avec django</h2>
+      <h3>Calcul avec expression</h3>
+    </div>
+
+    <section>
+      <div>
+        <form method="post">
+          {% csrf_token %}
+          <input
+            id="input-autosizeable"
+            type="string"
+            name="second"
+            placeholder="Entrez l'expression"
+          />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    </section>
+  </body>
+
+  <footer>
+    <a href="/"> Accéder au calcul par formule </a>
+  </footer>
+</html>
