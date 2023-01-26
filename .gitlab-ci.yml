@@ -6,3 +6,7 @@ hello-world:
   image: ubuntu:20.04
   script:
     - echo "hello world"
+    - apt update
+    - apt install python3-pip
+    - cd tp4_conception_logicielle/
+    - python -m unittest discover application/tests -p "*_test.py"
