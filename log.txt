@@ -1,0 +1,21 @@
+    1  dir
+    2  sudo dpkg -i google-chrome-stable_current_amd64.deb 
+    3  dir
+    4  cd core
+    5  dir
+    6  r
+    7  dir
+    8  cd core
+    9  cd lost+found/
+   10  dir
+   11  cd core
+   12  git
+   13  sudo apt update
+   14  sudo apt install python3-pip
+   15  git clone https://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@github.com/WolfPackStatMathieu/tp4_conception_logicielle.git
+   16  dir
+   17  cd tp4_conception_logicielle/
+   18  python -m unittest discover application/tests -p "*_test.py"
+   19  python3 -m unittest discover application/tests -p "*_test.py"
+   20  history 
+   21  history > log.txt
