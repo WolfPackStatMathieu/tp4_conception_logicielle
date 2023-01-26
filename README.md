@@ -4,7 +4,7 @@ A simple Calculatrice app made in Django
 
 ## Getting started
 
-Step one : Install django - `pip install django`
+Step one : Install django - `pip install -r requirements.txt`
 
 Step two : apply migrations `python manage.py migrate`
 

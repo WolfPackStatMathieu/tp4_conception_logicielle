@@ -1,5 +1,5 @@
 body {
-  background-image: url("Calculatrice.svg");
+  background-image: url("../assets/calculator.svg");
   min-height: 100vh;
 }
 h1 {

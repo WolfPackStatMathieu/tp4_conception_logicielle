@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
 from application.model.calculette import Calculette
-from application.model.interpreteur_wrapper import Interpreteur
+from application.model.interpreteur_wrapper import InterpreteurWrapper
 
 
 # Mappé a / dans le fichier urls.py
@@ -16,15 +16,16 @@ def home(request: HttpRequest) -> HttpResponse:
         b = request.POST.get("second")
         a = int(a)
         b = int(b)
+        calculette = Calculette()
         z = 0
         if op == "+":
-            z = Calculette.somme(a, b)
+            z = calculette.somme(a, b)
         elif op == "-":
-            z = Calculette.soustraction(a, b)
+            z = calculette.soustraction(a, b)
         elif op == "*":
-            z = Calculette.produit(a, b)
+            z = calculette.produit(a, b)
         elif op == "/":
-            z = Calculette.division(a, b)
+            z = calculette.division(a, b)
 
         return render(request, "application/result.html", context={"z": z})
 
@@ -32,7 +33,7 @@ def home(request: HttpRequest) -> HttpResponse:
 
 
 def calculer_from_expression(expression: str):
-    return 2
+    return InterpreteurWrapper().calculer_from_expression(expression=expression)
 
 
 # Mappé a /string dans le fichier urls.py
@@ -40,6 +41,6 @@ def calculer_from_expression(expression: str):
 def string(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
         expression = request.POST.get("expression")
-        z = Interpreteur.calculer_from_expression(expression)
+        z = calculer_from_expression(expression)
         return render(request, "application/result.html", context={"z": z})
     return render(request, "application/string.html")

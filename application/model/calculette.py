@@ -1,19 +1,17 @@
 class Calculette:
-    @staticmethod
-    def somme(a: int, b: int):
-        a = a + b
-        return a
+    def somme(self, a: int, b: int):
+        return a + b
 
-    @staticmethod
-    def soustraction(a: int, b: int):
+    def soustraction(self, a: int, b: int):
         return a - b
 
-    @staticmethod
-    def produit(a: int, b: int):
+    def produit(self, a: int, b: int):
         return a * b
 
-    @staticmethod
-    def division(numerateur: int, denominateur: int):
+    def division(self, numerateur: int, denominateur: int):
         if denominateur == 0:
-            return "Error! Division by zero isn't possible"
+            return "Erreur, division par zéro"
         return numerateur / denominateur
+
+    def compute(self, expression: str):
+        return eval(expression)

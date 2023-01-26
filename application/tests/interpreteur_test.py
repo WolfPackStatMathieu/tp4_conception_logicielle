@@ -1,6 +1,5 @@
 import unittest
 
-from application.model.calculette import Calculette
 from application.model.interpreteur_impl.no_parentheses_interpreteur import (
     NoParenthesesInterpreteur,
 )
