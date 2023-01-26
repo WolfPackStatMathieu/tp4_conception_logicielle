@@ -28,6 +28,10 @@ class CalculetteTest(unittest.TestCase):
     def test_division_should_throw_exception_on_division_by_0(self):
         self.assertRaises(ValueError, Calculette().division(2, 0))
 
+    def test_soustraction(self):
+        expected = 3
+        actual = Calculette().soustraction(a = 6, b = 3)
+        self.assertEqual(expected, actual)
 
 if __name__ == "__main__":
     unittest.main()
